@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Healthcare Eclipse Design System - HSL Only */
+    --background: 210 25% 98%;
+    --foreground: 215 25% 15%;
+
+    /* Medical Teal Primary */
+    --primary: 188 85% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 188 75% 55%;
+    --primary-glow: 188 85% 65%;
+
+    /* Soft Blue Secondary */
+    --secondary: 210 50% 92%;
+    --secondary-foreground: 215 25% 20%;
+
+    /* Health Green Accent */
+    --accent: 142 70% 45%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 142 60% 65%;
+
+    /* Warning/Alert */
+    --warning: 35 95% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Destructive/Critical */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Muted States */
+    --muted: 210 30% 94%;
+    --muted-foreground: 215 15% 50%;
+
+    /* Card & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+    --card-glow: 188 85% 40% / 0.05;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Borders & Inputs */
+    --border: 210 25% 88%;
+    --input: 210 25% 88%;
+    --ring: 188 85% 40%;
+
+    --radius: 0.75rem;
+
+    /* Health Metrics Colors */
+    --metric-excellent: 142 70% 45%;
+    --metric-good: 142 60% 55%;
+    --metric-moderate: 35 95% 55%;
+    --metric-poor: 0 75% 55%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(188 85% 40%), hsl(188 75% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210 50% 92%), hsl(210 40% 85%));
+    --gradient-health: linear-gradient(135deg, hsl(142 70% 45%), hsl(142 60% 65%));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(215 25% 15% / 0.08);
+    --shadow-md: 0 4px 16px hsl(215 25% 15% / 0.12);
+    --shadow-lg: 0 8px 24px hsl(215 25% 15% / 0.16);
+    --shadow-glow: 0 0 24px hsl(188 85% 40% / 0.2);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 215 30% 8%;
+    --foreground: 210 25% 95%;
+
+    --primary: 188 85% 50%;
+    --primary-foreground: 215 30% 8%;
+    --primary-light: 188 75% 60%;
+    --primary-glow: 188 85% 70%;
+
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 25% 95%;
+
+    --accent: 142 70% 50%;
+    --accent-foreground: 215 30% 8%;
+    --accent-light: 142 60% 70%;
+
+    --warning: 35 95% 60%;
+    --warning-foreground: 215 30% 8%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 15% 65%;
+
+    --card: 215 28% 12%;
+    --card-foreground: 210 25% 95%;
+
+    --popover: 215 28% 12%;
+    --popover-foreground: 210 25% 95%;
+
+    --border: 215 25% 22%;
+    --input: 215 25% 22%;
+    --ring: 188 85% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
