@@ -17,10 +17,10 @@ app.use(bodyParser.json());
 // ---------------- MYSQL CONNECTION ----------------
 // Replace with your actual database credentials
 const pool = mysql.createPool({
-  host: "10.226.94.117",       // MySQL is running locally
-  user: "health_user",     // Your MySQL username
-  password: "root",        // Your MySQL password
-  database: "health",      // Your database name
+  host: "10.226.94.117", // Laptop A IP
+  user: "health_user",
+  password: "root",
+  database: "health",
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
@@ -116,5 +116,18 @@ app.get("/api/profile", authenticate, async (req, res) => {
 
 // ---------------- START SERVER ----------------
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:8080/`);
 });
+
+// Test MySQL connection
+const testConnection = async () => {
+  try {
+    const connection = await pool.getConnection();
+    console.log("✅ MySQL connected successfully!");
+    connection.release();
+  } catch (err) {
+    console.error("❌ MySQL connection failed:", err);
+  }
+};
+
+testConnection();
